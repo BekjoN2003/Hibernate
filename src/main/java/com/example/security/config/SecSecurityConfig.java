@@ -25,10 +25,10 @@ public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/init/**").permitAll()
                 .antMatchers("/user/**").hasRole("USER")
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                        .antMatchers(HttpMethod.GET, "/book/action").permitAll()
-                        .antMatchers(HttpMethod.POST,"/bool/admin").hasRole("ADMIN")
-                        .anyRequest().authenticated()
-                        .and().httpBasic();
+                .antMatchers(HttpMethod.GET, "/book/action").permitAll()
+                .antMatchers(HttpMethod.POST,"/bool/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+                .and().httpBasic();
 
 
         httpSecurity.csrf().disable();
